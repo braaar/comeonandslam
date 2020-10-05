@@ -44,3 +44,5 @@ const extensions = [
     "6",
     "6/9",
     "9"];
+
+const specials = ["Everyone plays blindfolded."]

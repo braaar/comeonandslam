@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Jammer</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
     <script type="text/javascript" src="chords.js" defer></script>
     <script type="text/javascript" src="jammer.js" defer></script>
 </head>
+
 <body>
-<h1>Let's Jam</h1>
-<p>Get a chord progression to play
-<br />
-Select key:
-<select id="chord-key">
-    <option value="Chromatic" selected>Chromatic</option>
-</select>
+    <div class="container">
+        <h1>Let's Jam</h1>
+        <p>Get a chord progression to play
+            <br />
+            <select id="chord-key" hidden>
+                <option value="Chromatic" selected>Chromatic</option>
+            </select>
+
+            <button id="chord-button" class="btn btn-primary">Hit me!</button>
+            <button id="undo-button" class="btn btn-primary">Undo</button>
+            <button id="reset-button" class="btn btn-primary">Reset</button>
+        </p>
+        <h5 id="chord-field"></h5>
+
+        <div id="special-cards">
+
+        </div>
+    </div>
     
-<button id="chord-button">Hit me!</button>
-<button id="undo-button">Undo</button>
-<button id="reset-button">Reset</button>
-</p>
-<p id="chord-field"></p>
 </body>
+
 </html>
