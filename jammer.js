@@ -18,17 +18,17 @@ function addChord() {
     chordArray.push(chords["Chromatic"][randomInteger(0, 6)] + extensions[randomInteger(0, extensions.length-1)]);
     //TODO legge inn duplicate protection
     chordField.textContent = printChords(chordArray);
-}
+};
 
 function undoChord() {
     chordArray.pop();
     chordField.textContent = printChords(chordArray);
-}
+};
 
 function resetChords() {
     chordArray = [];
     chordField.textContent ="";
-}
+};
 
 function printChords(array) {
     let result = "";
@@ -36,10 +36,10 @@ function printChords(array) {
         result += element + ' ';
     });
     return result;
-}
+};
 
 function randomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 console.log('javascript loaded');
