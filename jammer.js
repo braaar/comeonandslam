@@ -12,6 +12,7 @@ let specialCards = document.getElementById('special-cards');
 
 //data structures
 let chordArray = [];
+let specialArray = [];
 
 //listeners
 chordButton.addEventListener('click', function () { addChord(); });
@@ -35,6 +36,7 @@ function undoChord() {
 function resetChords() {
     chordArray = [];
     chordField.textContent = "";
+    //TODO remove all cards
 };
 
 function printChords(array) {
@@ -52,12 +54,25 @@ function randomInteger(min, max) {
 function addSpecialCard() {
     //create card
     let card = document.createElement("div");
-    card.className += "card";
+    card.className += "card align-top";
     card.style = "width: 18rem; display:inline-block;";
+
+
+
+
     //create card body
     let cardBody = document.createElement("div");
     cardBody.className += "card-body";
     card.appendChild(cardBody);
+
+    //create closebutton
+    let closeButton = document.createElement("button");
+    closeButton.className += "close";
+    cardBody.appendChild(closeButton);
+    let closeIcon = document.createElement("span");
+    closeIcon.textContent = "\xD7";
+    closeButton.appendChild(closeIcon);
+
     //create card title
     let cardTitle = document.createElement("h5");
     cardTitle.className += "card-title";
@@ -68,21 +83,32 @@ function addSpecialCard() {
     cardBody.appendChild(cardText);
 
     //fylle elementet med content 
-    cardTitle.textContent = "Tittel";
-    cardText.textContent = "Text bla bla bla bla bla bla bla";
+    let cardContent = getSpecialCard();
+    cardTitle.textContent = cardContent[0];
+    cardText.textContent = cardContent[1];
 
     //add to DOM
     specialCards.appendChild(card);
-    let closeButton = document.createElement("button");
-    closeButton.className += "close";
-    //closeButton.textContent = "Remove";
-    cardBody.appendChild(closeButton);
 
-    let closeIcon = document.createElement("span");
-    closeIcon.textContent = "&times;";
-    closeButton.appendChild(closeIcon);
     closeButton.addEventListener("click", function () {
-        closeButton.closest('.card').fadeOut();
+        let thisCard = closeButton.closest('.card');
+        thisCard.parentNode.removeChild(thisCard);
+        //delete specialArray[];
     });
+}
+
+function getSpecialCard() {
+    if(specialArray.length == specials.length) {
+        return ["That's all we have", "No more special cards! Please submit your ideas for more special cards at the github repository (link on the bottom of the page)."]
+    }
+    else {
+        let cardIndex = randomInteger(0, specials.length - 1)
+    while(specialArray.includes(cardIndex)){
+        cardIndex = randomInteger(0, specials.length - 1)
+    }
+    specialArray.push(cardIndex);
+    return specials[cardIndex];
+    }
+    
 }
 console.log('javascript loaded');

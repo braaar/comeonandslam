@@ -45,4 +45,13 @@ const extensions = [
     "6/9",
     "9"];
 
-const specials = ["Everyone plays blindfolded."]
+const specials = [
+    ["Stevie Wonder", "Everyone plays blindfolded."], 
+    ["Let it breathe", "Every 4th bar must be silent, except for vocals."], 
+    ["The Poet", "Open up wikipedia. Hit random article. One person must read the article as poetry over the music."],
+    ["Syncopation", "Only the rhythm section may play notes on the beat. Everything else must be syncopated, including vocals."],
+    ["On the beat", "Everything must be played on the beat, including vocals. Notes can be suspended over multiple beats."],
+    ["Double harmonic time", "Change chords twice as fast (the tempo stays the same)."],
+    ["Switch it up", "Everyone must play on an instrument they do not know how to play, or know the least."],
+    ["Somebody", "Someone must sing the lyrics to \'Allstar\' by Smashmouth over the music."]
+]
